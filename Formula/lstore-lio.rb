@@ -18,6 +18,7 @@ depends_on "cmake" => :build
   depends_on "lstore-gop"
   depends_on "lstore-ibp"
   depends_on "lstore-toolbox"
+  depends_on "libjerasure1"
   depends_on "phoebus" => :optional
 
   #patch :DATA

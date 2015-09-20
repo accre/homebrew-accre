@@ -324,6 +324,7 @@ index c1c8545..5f25958 100644
                    -DAPR_INCLUDE_DIR=#{Formula["apr-accre"].libexec}/include/apr-1
                    -DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util-accre"].libexec}/include/apr-1]
     fuse_path = "-DCMAKE_PREFIX_PATH=#{ENV["CMAKE_PREFIX_PATH"]};/usr/local/include/osxfuse"
+    system "exit", "1"
     system "cmake", ".", fuse_path, *apr_paths, *std_cmake_args
 
 

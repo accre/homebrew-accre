@@ -5,7 +5,7 @@
 class LstoreGop < Formula
   desc ""
   homepage ""
-  url "https://github.com/accre/lstore-gop.git"
+  url "https://github.com/accre/lstore-gop.git", :branch => "redmine_pre-alok"
   version "1.0.0"
   sha256 ""
 
@@ -18,7 +18,7 @@ class LstoreGop < Formula
   depends_on "lstore-toolbox"
   depends_on "phoebus" => :optional
 
-  patch :DATA
+  #patch :DATA
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
@@ -29,12 +29,12 @@ class LstoreGop < Formula
                    -DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util-accre"].opt_prefix}/libexec/include
                    ]
     inreplace "CMakeLists.txt", /pthread m dl rt/, "pthread m dl"
-    inreplace "CMakeLists.txt", /ADD_EXECUTABLE\(rr_mq_test/, "#ADD_EXECUTABLE(rr_mq_test"
-    inreplace "CMakeLists.txt", /SET_TARGET_PROPERTIES\(rr_mq_test/, "#SET_TARGET_PROPERTIES(rr_mq_test"
-    inreplace "CMakeLists.txt", /TARGET_LINK_LIBRARIES\(rr_mq_test/, "#TARGET_LINK_LIBRARIES(rr_mq_test"
-    inreplace "rr_mq_client.c", /#include <sys\/eventfd\.h>/, ""
-    inreplace "rr_mq_server.c", /#include <sys\/eventfd\.h>/, ""
-    inreplace "rr_mq_worker.c", /#include <sys\/eventfd\.h>/, ""
+    #inreplace "CMakeLists.txt", /ADD_EXECUTABLE\(rr_mq_test/, "#ADD_EXECUTABLE(rr_mq_test"
+    #inreplace "CMakeLists.txt", /SET_TARGET_PROPERTIES\(rr_mq_test/, "#SET_TARGET_PROPERTIES(rr_mq_test"
+    #inreplace "CMakeLists.txt", /TARGET_LINK_LIBRARIES\(rr_mq_test/, "#TARGET_LINK_LIBRARIES(rr_mq_test"
+    #inreplace "rr_mq_client.c", /#include <sys\/eventfd\.h>/, ""
+    #inreplace "rr_mq_server.c", /#include <sys\/eventfd\.h>/, ""
+    #inreplace "rr_mq_worker.c", /#include <sys\/eventfd\.h>/, ""
     apr_paths = %W[-DCMAKE_LIBRARY_PATH=#{ENV["CMAKE_LIBRARY_PATH"]};#{Formula["apr-accre"].libexec}/lib;#{Formula["apr-util-accre"].libexec}/lib
                    -DAPR_INCLUDE_DIR=#{Formula["apr-accre"].libexec}/include/apr-1
                    -DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util-accre"].libexec}/include/apr-1]

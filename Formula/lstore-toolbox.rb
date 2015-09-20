@@ -19,7 +19,7 @@ class LstoreToolbox < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
  # #{Formula["apr-accre"].opt_prefix}
                    #{Formula["apr-accre"].libexec}
-    inreplace "CMakeLists.txt", /pthread m dl rt/, "pthread m dl"
+    inreplace "CMakeLists.txt", /rt pthread m dl/, "pthread m dl"
     apr_paths = %W[-DCMAKE_LIBRARY_PATH=#{ENV["CMAKE_LIBRARY_PATH"]};#{Formula["apr-accre"].libexec}/lib;#{Formula["apr-util-accre"].libexec}/lib
                    -DAPR_INCLUDE_DIR=#{Formula["apr-accre"].libexec}/include/apr-1
                    -DAPRUTIL_INCLUDE_DIR=#{Formula["apr-util-accre"].libexec}/include/apr-1]

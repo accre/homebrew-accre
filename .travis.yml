@@ -1,0 +1,26 @@
+# Stolen from 
+#   https://github.com/Homebrew/homebrew-fuse/blob/master/.travis.yml
+language: objective-c
+
+cache:
+  directories:
+    - /Library/Caches/Homebrew
+    - /opt/homebrew-cask/Caskroom/
+
+before_install:
+  - brew update
+
+install:
+  - mkdir -p $(brew --prefix)/Library/Taps/homebrew/
+  - ln -s $PWD $(brew --prefix)/Library/Taps/homebrew/homebrew-fuse
+
+script:
+  - cd $(brew --prefix)
+  - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
+        brew test-bot $TRAVIS_COMMIT --skip-setup --verbose --tap=homebrew/accre;
+    else
+        brew test-bot $TRAVIS_COMMIT --skip-setup --verbose --tap=homebrew/accre --ci-pr;
+    fi
+
+notifications:
+  email: false

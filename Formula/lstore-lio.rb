@@ -296,6 +296,20 @@ index cbae940..0132529 100644
  #cmakedefine HAVE_ATTR_XATTR_H
  #cmakedefine HAVE_SYS_XATTR_H
 '
+  patch :p1, 'diff --git a/erasure_tools.c b/erasure_tools.c
+index c1c8545..5f25958 100644
+--- a/erasure_tools.c
++++ b/erasure_tools.c
+@@ -36,7 +36,7 @@ http://www.accre.vanderbilt.edu
+ #include "cauchy.h"
+ #include "liberation.h"
+ #include "reed_sol.h"
+-#include "jerasure.h"
++#include <jerasure.h>
+ #include "raid4.h"
+ #include "erasure_tools.h"
+ #include "log.h"
+'
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
 

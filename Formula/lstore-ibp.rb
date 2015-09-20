@@ -8,13 +8,14 @@ class LstoreIbp < Formula
   url "https://github.com/accre/lstore-ibp.git"
   version "1.0.0"
   sha256 ""
-depends_on "cmake" => :build
+
+  depends_on "cmake" => :build
   depends_on "apr-accre" => :build
   depends_on "apr-util-accre" => :build
   depends_on "zeromq"
   depends_on "czmq"
   depends_on "zlib"
-  depends_on "libaccre-toolbox"
+  depends_on "lstore-toolbox"
   depends_on "lstore-gop"
   depends_on "phoebus" => :optional
 

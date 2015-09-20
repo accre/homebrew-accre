@@ -17,7 +17,7 @@ depends_on "cmake" => :build
   depends_on :osxfuse
   depends_on "lstore-gop"
   depends_on "lstore-ibp"
-  depends_on "libaccre-toolbox"
+  depends_on "lstore-toolbox"
   depends_on "phoebus" => :optional
 
   #patch :DATA

@@ -2,7 +2,7 @@
 #                http://www.rubydoc.info/github/Homebrew/homebrew/master/frames
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
-class LibaccreToolbox < Formula
+class LstoreToolbox < Formula
   desc "Toolbox of commonly used functions at ACCRE"
   homepage "https://github.com/accre/lstore-toolbox"
   url "https://github.com/accre/lstore-toolbox.git"
@@ -14,7 +14,6 @@ class LibaccreToolbox < Formula
   depends_on "apr-util-accre" => :build
   depends_on "zeromq"
   depends_on "czmq"
-  #depends_on "zlib"
   depends_on "phoebus" => :optional
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel

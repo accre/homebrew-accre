@@ -15,7 +15,7 @@ class LstoreGop < Formula
   depends_on "zeromq"
   depends_on "czmq"
   depends_on "zlib"
-  depends_on "libaccre-toolbox"
+  depends_on "lstore-toolbox"
   depends_on "phoebus" => :optional
 
   patch :DATA
